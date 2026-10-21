@@ -1,0 +1,44 @@
+name: quran_app
+description: "Al-Mulk Learn - an offline app for learning Surah Al-Mulk."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:        # needed so Urdu (right-to-left) works
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  provider: ^6.1.2              # simple state management
+  shared_preferences: ^2.3.2    # saves user data (works on Chrome too)
+  scrollable_positioned_list: ^0.3.8  # jump to a given ayah in the reader
+  just_audio: ^0.9.46           # plays the bundled mp3 files (works on Chrome)
+  share_plus: ^11.0.0           # share the ayah image / backup file
+  file_picker: ^8.1.6           # choose a backup file to restore
+  flutter_local_notifications: ^19.4.0  # daily reminder (Android only)
+  timezone: ^0.10.0             # needed to schedule at a local time
+  flutter_timezone: ^4.1.1      # finds the phone's time zone
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/quran.json
+    - assets/audio/
+  fonts:
+    - family: AmiriQuran
+      fonts:
+        - asset: assets/fonts/AmiriQuran-Regular.ttf
+    - family: NotoNastaliqUrdu
+      fonts:
+        - asset: assets/fonts/NotoNastaliqUrdu.ttf
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter.ttf
